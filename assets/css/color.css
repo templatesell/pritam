@@ -1,0 +1,18 @@
+.subscribe-btn,
+.subscribe-btn:hover,
+.blog-info .post-category,
+.sub-menu li a:hover {
+	color: #77929f;
+}
+
+.social-links li a:before,
+.social-links li a:after,
+.page-numbers.current,
+.page-numbers:hover,
+.cont-form-sec form input[type="submit"],
+.sub-menu li a:before,
+.blobs .blob-center,
+.show-more,
+.blob {
+	background-color: #77929f;
+}
