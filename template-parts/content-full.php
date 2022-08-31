@@ -1,22 +1,29 @@
-<div class="blog-section">
+<?php
+    global $pritam_theme_options;
+    $masonry = esc_attr($pritam_theme_options['pritam-column-blog-page']);
+    $masonry_grid = array('col-12 clearfix', $masonry);
+?>
+
+<div <?php post_class($masonry_grid); ?>>
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="blog-items main">
             <div class="blog-item main-style">
                 <?php if(has_post_thumbnail()) { ?>
-                  <div class="blog-img">
-                      <?php the_post_thumbnail('pritam-thumbnail-size'); ?>
-                      <?php
+                    <div class="blog-img">
+                        <?php the_post_thumbnail('pritam-thumbnail-size'); ?>
+                        <?php
                         $categories = get_the_category();
                         if ( ! empty( $categories ) ) {
-                          echo '<a class="post-category" href="'.esc_url( get_category_link( $categories[0]->term_id ) ).'">'.esc_html( $categories[0]->name ).'</a>';
+                            echo '<a class="post-category" href="'.esc_url( get_category_link( $categories[0]->term_id ) ).'">'.esc_html( $categories[0]->name ).'</a>';
                         }
-                      ?>
-                  </div>
+                        ?>
+                    </div>
                 <?php } ?>
                 <div class="blog-info">
                     <?php
                         $categories = get_the_category();
                         if ( ! empty( $categories ) ) {
-                          echo '<a class="post-category" href="'.esc_url( get_category_link( $categories[0]->term_id ) ).'">'.esc_html( $categories[0]->name ).'</a>';
+                            echo '<a class="post-category" href="'.esc_url( get_category_link( $categories[0]->term_id ) ).'">'.esc_html( $categories[0]->name ).'</a>';
                         }
                     ?>
                     <?php
@@ -32,14 +39,15 @@
                             <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
                             <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                         </ul>
-                          <?php 
-                          //if( 1 == $social_share ){
-                              do_action( 'pritam_social_sharing' ,get_the_ID() );
-                          //}
-                          ?>
+                            <?php 
+                            //if( 1 == $social_share ){
+                                do_action( 'pritam_social_sharing' ,get_the_ID() );
+                            //}
+                            ?>
                         </ul>
                     </div><!--met-soc end-->
                 </div><!--blog-info end-->
             </div><!--blog-items end-->
         </div><!--blog-items end-->
     </div>
+</div>

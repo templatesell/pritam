@@ -35,26 +35,28 @@ get_header();
 
 					/* Masonry Start Section */
 					do_action('pritam_masonry_start_hook');
-					
-					/* Start the Loop */
-					$i = 1;
-					while ( have_posts() ) :
-						the_post();
-						
-						if($i == 1){
-							get_template_part( 'template-parts/content', 'full' );
-						}else{
+					?>
+					<div class="row">
+						<?php
+						/* Start the Loop */
+						$i = 1;
+						while ( have_posts() ) :
+							the_post();
+							
+							if($i == 1){
+								get_template_part( 'template-parts/content', 'full' );
+							}else{
 
-						/*
-						 * Include the Post-Type-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						 */
+							/*
+							* Include the Post-Type-specific template for the content.
+							* If you want to override this in a child theme, then include a file
+							* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+							*/
 
-						get_template_part( 'template-parts/content', 'grid' );
-						}
+							get_template_part( 'template-parts/content', 'grid' );
+							}
 
-						$i++; endwhile; ?>
+							$i++; endwhile; ?>
 					</div>
 					<?php 
 
