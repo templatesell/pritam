@@ -1,6 +1,7 @@
 .subscribe-btn,
 .subscribe-btn:hover,
 .blog-info .post-category,
+.children li a:hover,
 .sub-menu li a:hover {
 	color: #77929f;
 }
@@ -10,6 +11,7 @@
 .page-numbers.current,
 .page-numbers:hover,
 .cont-form-sec form input[type="submit"],
+.children li a:before,
 .sub-menu li a:before,
 .blobs .blob-center,
 .show-more,

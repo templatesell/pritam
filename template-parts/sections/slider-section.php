@@ -23,7 +23,6 @@ $args = array(
 );
 ?>
 
-
 <section class="blog-section pb-5">
   <div class="container">
     <div class="blog-items main">
@@ -32,15 +31,15 @@ $args = array(
         $count = $slider_query->post_count;
         if ($slider_query->have_posts()): 
       ?>
-      <div class="row">
+      <div class="layout-grid">
           <?php
             $i = 1;
             while ($slider_query->have_posts()) :
               $slider_query->the_post();
               if ($i == 1) {
             ?>
-        <div class="col-lg-8 mr-md-2">
-          <div class="blog-item main-style">
+        
+          <div class="blog-item main-style blog-left">
             <?php if(has_post_thumbnail()) { ?>
               <div class="blog-img">
                   <?php the_post_thumbnail('pritam-thumbnail-size'); ?>
@@ -51,6 +50,8 @@ $args = array(
                     }
                   ?>
               </div>
+            <?php } else{ ?>
+              <div class="no-image"></div>
             <?php } ?>
             
             <div class="blog-info">
@@ -71,22 +72,24 @@ $args = array(
               </div><!--met-soc end-->
             </div><!--blog-info end-->
           </div><!--blog-items end-->
-        </div>
+        
         <?php
           } else {
               if ($i == 2) {
         ?>
-        <div class="col-lg-4">
+        
           <?php
           }
           ?>
-          <div class="blog-item">
+          <div class="blog-item blog-right">
             <?php if(has_post_thumbnail()) { ?>
               <div class="blog-img">
-                  <?php the_post_thumbnail('pritam-related-size'); ?>
+                  <?php the_post_thumbnail('pritam-thumbnail-size'); ?>
                   
               </div>
-           <?php } ?><!--blog-img end-->
+            <?php } else{ ?>
+              <div class="no-image"></div>
+            <?php } ?>
             <div class="blog-info">
               <h3 class="post-title">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -96,7 +99,7 @@ $args = array(
           <?php
           if ($i == $count) {
           ?>
-        </div>
+        
         <?php
         }
         }
@@ -106,6 +109,6 @@ $args = array(
       </div>
       <?php endif;
         wp_reset_postdata(); ?>
-    </div><!--blog-items end-->
+    </div>
   </div>
-</section><!--blog-section end-->
+</section>

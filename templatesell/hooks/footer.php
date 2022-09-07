@@ -11,7 +11,7 @@ if (!function_exists('pritam_go_to_top')) :
     {
     ?>
             <a id="toTop" class="go-to-top" href="#" title="<?php esc_attr_e('Go to Top', 'pritam'); ?>">
-                <i class="fa fa-angle-double-up"></i>
+                <i class="la la-arrow-up"></i>
             </a>
 <?php
     } endif;

@@ -75,7 +75,7 @@ if( !function_exists( 'pritam_blog_sidebar_position_array' ) ) :
             'right-sidebar'  => get_template_directory_uri() . '/assets/images/right-sidebar.png',
             'left-sidebar' => get_template_directory_uri() . '/assets/images/left-sidebar.png',
             'no-sidebar'  => get_template_directory_uri() . '/assets/images/no-sidebar.png',
-            'middle-column'  => get_template_directory_uri() . '/assets/images/middle-content.png',
+            //'middle-column'  => get_template_directory_uri() . '/assets/images/middle-content.png',
         );
         
         return $sidebar_positions;
@@ -85,20 +85,20 @@ endif;
 
 
 //only for single page
-if( !function_exists( 'pritam_sidebar_position_array' ) ) :
-    /*
-     * Function to get blog categories
-     */
-    function pritam_sidebar_position_array() {
+// if( !function_exists( 'pritam_sidebar_position_array' ) ) :
+//     /*
+//      * Function to get blog categories
+//      */
+//     function pritam_sidebar_position_array() {
 
-        $sidebar_positions = array(
-            'single-right-sidebar'  => get_template_directory_uri() . '/assets/images/right-sidebar.png',
-            'single-left-sidebar' => get_template_directory_uri() . '/assets/images/left-sidebar.png',
-            'single-no-sidebar'  => get_template_directory_uri() . '/assets/images/no-sidebar.png',
-            'single-middle-column'  => get_template_directory_uri() . '/assets/images/middle-content.png',
-        );
+//         $sidebar_positions = array(
+//             'single-right-sidebar'  => get_template_directory_uri() . '/assets/images/right-sidebar.png',
+//             'single-left-sidebar' => get_template_directory_uri() . '/assets/images/left-sidebar.png',
+//             'single-no-sidebar'  => get_template_directory_uri() . '/assets/images/no-sidebar.png',
+//             'single-middle-column'  => get_template_directory_uri() . '/assets/images/middle-content.png',
+//         );
         
-        return $sidebar_positions;
+//         return $sidebar_positions;
 
-    }
-endif;
+//     }
+// endif;

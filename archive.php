@@ -6,7 +6,8 @@
  *
  * @package Pritam
  */
-
+global $pritam_theme_options;
+$sidebar = $pritam_theme_options['pritam-sidebar-blog-page'];
 get_header();
 ?>
 <div class="ts-breadcrumbs">
@@ -30,9 +31,10 @@ get_header();
 
 <section id="content" class="main-content pb-0">
     <div class="container">
-        <div class="row">
-			<div id="primary" class="col-lg-8 mgr-50">
+        <div class="row <?php echo esc_attr($sidebar); ?>">
+			<div id="primary" class="col-lg-8">
 				<main id="main" class="site-main">
+					<div class="row">
 					<?php if ( have_posts() ) : 
 					/* Start the Loop */
 					$i = 1;
@@ -52,8 +54,9 @@ get_header();
 						get_template_part( 'template-parts/content', 'grid' );
 						}
 
-						$i++; endwhile; 
-
+						$i++; endwhile; ?>
+					</div> 
+					<?php
 					/* Masonry end Section */
 					do_action('pritam_masonry_end_hook');
 
@@ -71,6 +74,7 @@ get_header();
 
 				endif;
 				?>
+
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php get_sidebar(); ?>

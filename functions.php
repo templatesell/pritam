@@ -136,7 +136,7 @@ if ( ! function_exists( 'pritam_setup' ) ) :
          * @link https://developer.wordpress.org/reference/functions/add_image_size/
          */
         
-        add_image_size('pritam-thumbnail-size', 820, 505, true); 
+        add_image_size('pritam-thumbnail-size', 960, 468, true); 
         add_image_size('pritam-related-size', 680, 494, true); 
         add_image_size('pritam-promo-post', 800, 500, true); 
         add_image_size('pritam-related-post-thumbnails', 850, 550, true );

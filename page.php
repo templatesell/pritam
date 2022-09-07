@@ -11,6 +11,8 @@
  *
  * @package Pritam
  */
+global $pritam_theme_options;
+$sidebar = $pritam_theme_options['pritam-sidebar-blog-page'];
 get_header();
 ?>
 <div class="ts-breadcrumbs">
@@ -24,8 +26,8 @@ get_header();
 </div>
 <section id="content" class="main-content pb-0">
     <div class="container">
-        <div class="row">
-			<div id="primary" class="col-lg-8 mgr-50">
+        <div class="row <?php echo esc_attr($sidebar); ?>">
+			<div id="primary" class="col-lg-8">
 				<main id="main" class="site-main">
 				<?php
 				while ( have_posts() ) :

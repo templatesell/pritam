@@ -27,7 +27,6 @@ if (!function_exists('pritam_dynamic_css')) :
         //Primary  Background 
         if (!empty($pritam_primary_color)) {
             $custom_css .= "
-            #toTop,
             a.effect:before,
             .show-more,
             a.link-format,

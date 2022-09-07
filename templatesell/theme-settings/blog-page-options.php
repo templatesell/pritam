@@ -86,6 +86,7 @@ $wp_customize->add_control('pritam_options[pritam-content-show-from]', array(
     'choices' => array(
         'excerpt' => __('Show from Excerpt', 'pritam'),
         'content' => __('Show from Content', 'pritam'),
+        'no-content' => __('No Content', 'pritam'),
     ),
     'label' => __('Select Content Display From', 'pritam'),
     'description' => __('You can enable excerpt from Screen Options inside post section of dashboard', 'pritam'),

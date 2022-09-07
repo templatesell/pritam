@@ -109,7 +109,7 @@ $query_args_footer = array(
 </section>
 <!--recommend-posts end-->
 
-<footer>
+<footer class="footer">
 	<div class="container">
 		<div class="blog-items ft-style py-5">
 			<?php
