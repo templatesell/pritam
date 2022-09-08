@@ -409,18 +409,10 @@
 	.smaller-post .blog-img{
 		width: 100%;
 	}
-	.blog-items.main .meta {
-		display: none;
-	}
 
 	.blog-items.main .blog-item.main-style .post-title {
 		margin-bottom: 0;
 	}
-
-/*	.slider-wrapper .blog-items.main .blog-item.main-style .blog-info, 
-	.has-post-thumbnail .blog-items.main .blog-item.main-style .blog-info {
-		bottom: 10px;
-	}*/
 
 	.blog-section .nav-tabs .nav-link {
 		font-size: 9px;

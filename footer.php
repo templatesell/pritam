@@ -180,8 +180,9 @@ $query_args_footer = array(
 				</div>
 			</div>
 		</div><!--footer-content end-->
-
-		<div class="bottom-strip">
+	</div>
+	<div class="bottom-strip">
+		<div class="container">
 			<p>
 				<?php echo $copyright; ?>
 				<span class="sep"> | </span>

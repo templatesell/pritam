@@ -854,6 +854,7 @@ header {
 	float: left;
 	margin-bottom: 0;
 	overflow: hidden;
+	margin-right: 20px;
 }
 .wd-post:hover .blog-img img {
 	filter: grayscale(100%);
@@ -862,7 +863,7 @@ header {
 	display: table-cell;
 	width: 100%;
 	vertical-align: middle;
-	padding-left: 13px;
+	
 }
 .wd-post-info > .post-title {
 	font-size: 13px;
