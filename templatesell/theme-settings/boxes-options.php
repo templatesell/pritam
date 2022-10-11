@@ -6,7 +6,7 @@ $wp_customize->add_section( 'pritam_promo_section', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-    'title'          => __( 'Boxes Below Slider Settings', 'pritam' ),
+    'title'          => __( 'Boxes Below Featured Posts', 'pritam' ),
     'panel'          => 'pritam_panel',
 ) );
 

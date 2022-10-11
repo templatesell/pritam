@@ -9,11 +9,9 @@
  * @package Pritam
  */
 global $pritam_theme_options;
-$enable_header = absint($pritam_theme_options['pritam_enable_top_header']);
-$enable_menu   = absint($pritam_theme_options['pritam_enable_top_header_menu']);
-$enable_social = absint($pritam_theme_options['pritam_enable_top_header_social']);
-
 $copyright = wp_kses_post($pritam_theme_options['pritam-footer-copyright']);
+$recommend_cat = absint($pritam_theme_options['pritam_footer_top_recommendation']);
+$you_may_like_cat = absint($pritam_theme_options['pritam_footer_you_may_like']);
 if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') ) {
 	$count = 0;
 	for ( $i = 1; $i <= 4; $i++ )
@@ -46,16 +44,18 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 $query_args = array(
     'post_type' => 'post',
     'posts_per_page' => 6,
+	'cat'=> $recommend_cat
 );
 $query_args_footer = array(
     'post_type' => 'post',
     'posts_per_page' => 4,
+	'cat'=> $you_may_like_cat
 );
 ?>
 <section class="recommend-posts pb-5">
     <div class="container">
         <div class="sec-title">
-            <h3>Recommended</h3>
+            <h3><?php esc_html_e('Recommended','pritam'); ?></h3>
         </div>
         <!--sec-title end-->
         <div class="blog-items smaller-post">
@@ -112,6 +112,9 @@ $query_args_footer = array(
 <footer class="footer">
 	<div class="container">
 		<div class="blog-items ft-style py-5">
+		<div class="sec-title">
+            <h3><?php esc_html_e('You May Like..','pritam'); ?></h3>
+        </div>
 			<?php
         	$query = new WP_Query($query_args_footer);
             $count = $query->post_count;
@@ -153,7 +156,6 @@ $query_args_footer = array(
 					</div><!--ft-logo end-->
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-6">
-					<?php if( $enable_social == 1 ){ ?>
 						<div class="social-icon-links">
 							<?php
 								wp_nav_menu( array(
@@ -163,10 +165,8 @@ $query_args_footer = array(
 								) );
 							?>
 						</div>
-					<?php } ?>
 				</div>
 				<div class="col-lg-4 col-md-12">
-					<?php if( $enable_menu == 1 ) { ?>
 						<?php
 						if (has_nav_menu('footer')) {
 							wp_nav_menu( array(
@@ -176,7 +176,6 @@ $query_args_footer = array(
 								'menu_class'      => 'ft-links'
 							) );
 						} ?>
-					<?php } ?>
 				</div>
 			</div>
 		</div><!--footer-content end-->

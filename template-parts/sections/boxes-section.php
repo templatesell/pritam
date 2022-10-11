@@ -15,13 +15,13 @@ if( $promo_cat > 0 )
     <section class="blog-section feat-stors pb-5">
             <div class="container">
                 <div class="sec-title">
-                    <h3>Featured Stories </h3>
+                    <h3><?php esc_html_e('Featured Stories','pritam'); ?> </h3>
                 </div><!--sec-title end-->
                 <div class="blog-items">
                     <div class="row">
                         <?php
                     $args = array(
-                        'cat' => $promo_cat ,
+                        'cat' => $promo_cat,
                         'posts_per_page' => 4,
                         'order'=> 'DESC'
                     );

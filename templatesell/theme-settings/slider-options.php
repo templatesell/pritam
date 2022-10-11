@@ -6,7 +6,7 @@ $wp_customize->add_section( 'pritam_slider_section', array(
    'priority'       => 20,
    'capability'     => 'edit_theme_options',
    'theme_supports' => '',
-   'title'          => __( 'Slider Settings', 'pritam' ),
+   'title'          => __( 'Featured Post Settings', 'pritam' ),
    'panel' 		 => 'pritam_panel',
 ) );
 
@@ -35,8 +35,8 @@ $wp_customize->add_setting( 'pritam_options[pritam_enable_slider]', array(
 $wp_customize->add_control(
     'pritam_options[pritam_enable_slider]', 
     array(
-       'label'     => __( 'Enable Slider', 'pritam' ),
-       'description' => __('You can select the category for the slider below. More Options are available on premium version.', 'pritam'),
+       'label'     => __( 'Enable Featured Post', 'pritam' ),
+       'description' => __('You can select the category for the featured below. More Options are available on premium version.', 'pritam'),
        'section'   => 'pritam_slider_section',
        'settings'  => 'pritam_options[pritam_enable_slider]',
         'type'      => 'checkbox',
@@ -58,8 +58,8 @@ $wp_customize->add_control(
         $wp_customize,
         'pritam_options[pritam-select-category]',
         array(
-            'label'     => __( 'Select Category For Slider', 'pritam' ),
-            'description' => __('Choose one category to show the slider. More settings are in pro version.', 'pritam'),
+            'label'     => __( 'Select Category For Featured Post', 'pritam' ),
+            'description' => __('Choose one category to show the featured post. More settings are in pro version.', 'pritam'),
             'section'   => 'pritam_slider_section',
             'settings'  => 'pritam_options[pritam-select-category]',
             'type'      => 'category_dropdown',

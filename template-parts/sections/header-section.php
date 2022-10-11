@@ -11,6 +11,9 @@
 $GLOBALS['pritam_theme_options'] = pritam_get_options_value();
 global $pritam_theme_options;
 $search_header = absint($pritam_theme_options['pritam_enable_search']);
+$subscribe_header = esc_html($pritam_theme_options['pritam_subscribe_text']);
+$link_header = esc_url($pritam_theme_options['pritam_subscribe_link']);
+$icon_class = esc_attr($pritam_theme_options['pritam_subscribe_icon_name']);
 ?>
 <?php 
 $header_image = esc_url(get_header_image());
@@ -64,7 +67,12 @@ $header_class = ($header_image == "") ? '' : 'header-image';
 				</div>
 			</nav><!--navigation end-->
 			<div class="rt-subs">
-				<a class="subscribe-btn" href="#" title=""><i class="la la-envelope-o"></i> Subscribe</a>
+				<?php if(!empty($subscribe_header)){ ?>
+				<a class="subscribe-btn" href="<?php echo esc_url($link_header); ?>" title="">
+					<i class="<?php echo esc_attr($icon_class); ?>"></i>
+					<?php echo esc_html($subscribe_header); ?>
+				</a>
+				<?php } ?>
 				<?php if( 1 == $search_header ){ ?>
 				<a class="search-btn" href="#" title="">
 					<i class="la la-search"></i>

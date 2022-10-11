@@ -14,11 +14,6 @@ if ( !function_exists('pritam_default_theme_options_values') ) :
           /*Logo Options*/
           'pritam_logo_width_option' => '600',
 
-            /*Top Header*/
-            'pritam_enable_top_header'=> 0, 
-            'pritam_enable_top_header_social'=> 0,
-            'pritam_enable_top_header_menu'=> 0,
-
             /*Header Image*/
             'pritam_enable_header_image_overlay'=> 0,
             'pritam_slider_overlay_color'=> '#000000',
@@ -27,6 +22,9 @@ if ( !function_exists('pritam_default_theme_options_values') ) :
 
            /*Header Options*/
             'pritam_enable_search'  => 0,
+            'pritam_subscribe_text'=> esc_html__('SUBSCRIBE','pritam'),
+            'pritam_subscribe_link'=> '#',
+            'pritam_subscribe_icon_name'=> 'la la-envelope-o',
 
             /*Colors Options*/
             'pritam_primary_color'              => '#d42929',
@@ -66,6 +64,8 @@ if ( !function_exists('pritam_default_theme_options_values') ) :
 
             /*Footer Section*/
             'pritam-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2022','pritam'),
+            'pritam_footer_top_recommendation'=> 0,
+            'pritam_footer_you_may_like'=> 0,
 
             /*Breadcrumb Options*/
             'pritam-extra-breadcrumb' => 1,
