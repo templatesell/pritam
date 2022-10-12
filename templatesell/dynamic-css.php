@@ -141,7 +141,7 @@ if (!function_exists('pritam_dynamic_css')) :
         //Header Min Height
         if (!empty($pritam_header_min_height)) {
             $custom_css .= "
-            .header-1 .header-image .head_one { 
+            .header-image{ 
                 min-height : ". $pritam_header_min_height."px; 
             }";
         }
