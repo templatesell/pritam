@@ -107,7 +107,7 @@ if (!function_exists('pritam_dynamic_css')) :
             }";
         }
 
-        wp_add_inline_style('pritam-color-style', $custom_css);
+        wp_add_inline_style('pritam-responsive-style', $custom_css);
     }
 endif;
 add_action('wp_enqueue_scripts', 'pritam_dynamic_css', 99);
