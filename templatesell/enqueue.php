@@ -27,7 +27,6 @@ function pritam_scripts() {
     wp_enqueue_style( 'pritam-style', get_stylesheet_uri() );
     wp_enqueue_style( 'pritam-custom-style', get_template_directory_uri() . '/assets/css/style.css', array(), '4.5.0' );
     wp_enqueue_style( 'pritam-responsive-style', get_template_directory_uri() . '/assets/css/responsive.css', array(), '4.5.0' );
-    wp_enqueue_style( 'pritam-color-style', get_template_directory_uri() . '/assets/css/color.css', array(), '4.5.0' );
 	
     /*RTL CSS*/
 	wp_style_add_data( 'pritam-style', 'rtl', 'replace' );

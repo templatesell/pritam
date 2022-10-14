@@ -27,7 +27,7 @@ if ( !function_exists('pritam_default_theme_options_values') ) :
             'pritam_subscribe_icon_name'=> 'la la-envelope-o',
 
             /*Colors Options*/
-            'pritam_primary_color'              => '#d42929',
+            'pritam_primary_color'              => '#77929f',
 
             /*Slider Options*/
             'pritam_enable_slider'      => 1,
