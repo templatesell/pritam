@@ -176,7 +176,6 @@ nav ul li a {
 	text-transform: uppercase;
 	letter-spacing: 0.6px;
 }
-nav ul li a:visited,
 nav ul li a:hover {
 	color: #1a191e;
 }
@@ -2389,7 +2388,18 @@ header.style2 .top-bar{
 	padding: 39px 0 45px 0;
 }
 
-
+.single .blog-item a,
+.single .blog-item p a,
+.single .blog-item h1 a,
+.single .blog-item h2 a,
+.single .blog-item h3 a,
+.single .blog-item h4 a,
+.single .blog-item h5 a,
+.single .blog-item h6 a,
+.single .blog-item ul li a, 
+.single .blog-item ol li a{
+  text-decoration: underline;
+}
 
 /* ========================= COMMENT SECTION ========================== */
 .comment-respond,

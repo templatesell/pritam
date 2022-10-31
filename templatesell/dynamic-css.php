@@ -36,6 +36,8 @@ if (!function_exists('pritam_dynamic_css')) :
             .sub-menu li a:before,
             .blobs .blob-center,
             .show-more,
+            .post-control ul li:hover,
+            .comment-respond .form-submit input[type='submit'],
             .blob{ 
                 background-color: ". $pritam_primary_color."; 
             }";
@@ -62,11 +64,10 @@ if (!function_exists('pritam_dynamic_css')) :
         //Primary Color
         if (!empty($pritam_primary_color)) {
             $custom_css .= "
-            a,
-            nav ul li a:visited, 
-            nav ul li a:hover,
+            a, 
+            nav ul li a:hover, 
             a.subscribe-btn,
-            .nav ul li.current-menu-item a,
+            nav ul li.current-menu-item a,
             .subscribe-btn:hover,
             .blog-info .post-category,
             .children li a:hover,
