@@ -22,7 +22,7 @@ $image = absint($pritam_theme_options['pritam-single-page-featured-image']);
                                 <?php pritam_entry_meta(); ?>
                             </li>
                             <li><?php pritam_posted_on(); ?></li>
-                            <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                            <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                             <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                         </ul>
                     <?php endif; ?>
@@ -60,9 +60,7 @@ $image = absint($pritam_theme_options['pritam-single-page-featured-image']);
                         <?php the_tags();  ?>
                     </div><!--post-catgs-list end-->
                     <?php 
-                      //if( 1 == $social_share ){
                           do_action( 'pritam_social_sharing' ,get_the_ID() );
-                      //}
                       ?><!--social-links end-->
                     <div class="clearfix"></div>
                 </div><!--post-catgs-links end-->
@@ -73,7 +71,7 @@ $image = absint($pritam_theme_options['pritam-single-page-featured-image']);
                             // Get the author ID    
                             $author_id = get_post_field('post_author' , $post->ID);  
                             $output = get_avatar_url($author_id);   
-                            echo '<img src="'.$output.'"/>';
+                            echo '<img src="'.esc_url($output).'"/>';
                         ?>
                     </div><!--author-img end-->
                     <div class="author-info">

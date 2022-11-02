@@ -34,7 +34,7 @@ $author = absint($pritam_theme_options['pritam-show-hide-author']);
                 ?>
                 <ul class="meta">
                     <li><?php pritam_posted_on()?></li>
-                    <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                    <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                     <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                 </ul>
                 <?php

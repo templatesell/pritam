@@ -35,3 +35,85 @@ function pritam_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'pritam_pingback_header' );
+
+function pritam_comments_number ($output, $number) {
+	if ($number == 0) $output = '0';
+	elseif ($number == 1) $output = '1';
+	else $output = $number . '';
+	return $output;
+  }
+  add_filter ('comments_number', 'pritam_comments_number', 10, 2);
+  
+  
+  
+  function Pritam_GetPostViews($postID){
+	  $count_key = 'post_views_count';
+	  $count = get_post_meta($postID, $count_key, true);
+	  if($count==''){
+		  delete_post_meta($postID, $count_key);
+		  add_post_meta($postID, $count_key, '0');
+		  return "0";
+	  }
+	  return $count.'';
+  }
+   
+  function Pritam_SetPostViews($postID) {
+	  $count_key = 'post_views_count';
+	  $count = get_post_meta($postID, $count_key, true);
+	  if($count==''){
+		  $count = 0;
+		  delete_post_meta($postID, $count_key);
+		  add_post_meta($postID, $count_key, '0');
+	  }else{
+		  $count++;
+		  update_post_meta($postID, $count_key, $count);
+	  }
+  }
+  /**
+   * Comment Layout
+   */
+  function pritam_custom_comment($comment, $args, $depth) {
+	  extract($args, EXTR_SKIP);
+  
+	  if ( 'div' == $args['style'] ) {
+		  $tag = 'div';
+		  $add_below = 'comment';
+	  } else {
+		  $tag = 'li';
+		  $add_below = 'div-comment';
+	  } ?>
+	  <<?php echo esc_attr($tag); ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	  <?php if ( 'div' != $args['style'] ) : ?>
+	  <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	  <?php endif; ?>
+		  <div class="comment-author cm-img">
+			  <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		  </div>
+		  <div class="comment-content cm-info">
+			  <div class="author-wrap">
+				  <div class="cm-hed">
+					  <?php printf( __( '<h3 class="author-name">%s</h3>', 'pritam' ), get_comment_author_link() ); ?>
+					  <div class="cm-right">
+						  <span>
+							  <a class="date-comment" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"></a>
+							  <?php printf( __('%1$s at %2$s', 'pritam'), get_comment_date(),  get_comment_time() ); ?>
+						  </span>
+						  <div class="reply">
+							  <?php edit_comment_link( esc_html__( '(Edit)', 'pritam' ), '  ', '' );?>
+							  <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			  <div class="clearfix"></div>
+			  <?php if ( $comment->comment_approved == '0' ) : ?>
+				  <em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'pritam' ); ?></em>
+				  <br />
+			  <?php endif; ?>
+			  <div class="comment-text"><?php comment_text(); ?></div>
+		  </div>
+	  <?php if ( 'div' != $args['style'] ) : ?>
+	  </div>
+	  <?php endif; ?>
+  <?php
+  }

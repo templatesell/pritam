@@ -52,6 +52,8 @@ $query_args_footer = array(
 	'cat'=> $you_may_like_cat
 );
 ?>
+
+<?php if(is_home() || is_front_page()) { ?>
 <section class="recommend-posts pb-5">
     <div class="container">
         <div class="sec-title">
@@ -90,7 +92,7 @@ $query_args_footer = array(
 			              	</h3>
                             <ul class="meta">
 			                  <li><?php pritam_posted_on()?></li>
-			                  <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+			                  <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
 			                  <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
 			                </ul>
                         </div>
@@ -107,6 +109,7 @@ $query_args_footer = array(
         </div>
     </div>
 </section>
+<?php } ?>
 <!--recommend-posts end-->
 
 <footer class="footer">
@@ -193,9 +196,6 @@ $query_args_footer = array(
 		</div>
 	</div>
 </footer><!--footer end-->
-
-
-
 <?php do_action('pritam_go_to_top_hook'); ?>
 <?php wp_footer(); ?>
 </body>

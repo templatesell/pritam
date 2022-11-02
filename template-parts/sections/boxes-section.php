@@ -43,7 +43,7 @@ if( $promo_cat > 0 )
                                     <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                     <ul class="meta">
                                         <li><?php pritam_posted_on(); ?></li>
-                                        <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                                        <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                                         <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                                     </ul>
                                 </div><!--blog-info end-->

@@ -9,12 +9,6 @@
  */
 global $pritam_theme_options;
 $slide_id = absint($pritam_theme_options['pritam-select-category']);
-// $slick_args = array(
-//     'slidesToShow'      => 1,
-//     'slidesToScroll'    => 1,
-//     'dots'              => false,
-//     'arrows'            => false,
-// );
 $args = array(
  'posts_per_page' => 3,
  'paged' => 1,
@@ -61,7 +55,7 @@ $args = array(
               <div class="met-soc">
                 <ul class="meta">
                   <li><?php pritam_posted_on()?></li>
-                  <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                  <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                   <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                 </ul>
                   <?php 
@@ -102,7 +96,7 @@ $args = array(
               <div class="met-soc">
                 <ul class="meta">
                   <li><?php pritam_posted_on()?></li>
-                  <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                  <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                   <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                 </ul>
               </div>

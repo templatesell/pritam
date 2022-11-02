@@ -2,10 +2,10 @@
 
 Contributors: templatesell
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, news
-Requires at least: 4.5
-Requires PHP: 4.7
-Tested up to: 5.8
-Stable tag: 1.3.0
+Requires at least: 5.0
+Requires PHP: 5.2
+Tested up to: 6.1
+Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,9 +45,8 @@ Pritam is distributed under the terms of the GNU GPL v2 or later.
 * Theia Sticky Sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT license]
 * Slick Slider https://github.com/kenwheeler/slick/blob/master/LICENSE [The MIT License (MIT)]
 * Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
-* imagesLoaded MIT License https://imagesloaded.desandro.com/#mit-license
-* Canvi The MIT License (MIT) https://github.com/thepinecode/canvi/blob/master/LICENSE.txt
-* Pro Notice - ThemeGrill Demo Importer GPL license
+* Line Awesome 1.1.0 by @icons_8 - https://icons8.com/line-awesome License - https://icons8.com/good-boy-license/ (Font: SIL OFL 1.1, CSS: MIT License)
+ * Bootstrap v4.0.0-beta (https://getbootstrap.com) Copyright 2011-2017 The Bootstrap Authors Copyright 2011-2017 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 == Screenshot Images [CCO License] ==
 Image for theme screenshot, Copyright Trevor Paterson

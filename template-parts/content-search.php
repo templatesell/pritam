@@ -32,7 +32,7 @@ $image_location = esc_attr($pritam_theme_options['pritam-blog-image-layout']);
                             <?php the_title(sprintf('<h2 class="post-title entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
                             <ul class="meta">
                                 <li><?php pritam_posted_on()?></li>
-                                <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                                <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                                 <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                             </ul>
                         </div><!--blog-info end-->
@@ -56,7 +56,7 @@ $image_location = esc_attr($pritam_theme_options['pritam-blog-image-layout']);
 
                             <ul class="meta">
                                 <li><?php pritam_posted_on()?></li>
-                                <li><i class="la la-eye"></i><?php echo getPritamPostViews(get_the_ID()); ?></li>
+                                <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                                 <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                             </ul>
                         </div><!--blog-info end-->
