@@ -6,7 +6,7 @@ $wp_customize->add_section( 'pritam_promo_section', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-    'title'          => __( 'Boxes Below Featured Posts', 'pritam' ),
+    'title'          => __( 'Featured Stories Section', 'pritam' ),
     'panel'          => 'pritam_panel',
 ) );
 
@@ -39,6 +39,25 @@ $wp_customize->add_control( 'pritam_options[pritam_enable_promo]', array(
     'settings'  => 'pritam_options[pritam_enable_promo]',
     'type'      => 'checkbox',
     'priority'  => 5,
+
+) );
+
+/*Featured Stories Text*/
+$wp_customize->add_setting( 'pritam_options[pritam_featured_stories_text]', array(
+    'capability'        => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default'           => $default['pritam_featured_stories_text'],
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+
+$wp_customize->add_control( 'pritam_options[pritam_featured_stories_text]', array(
+    'label'     => __( 'Featured Stories Text', 'pritam' ),
+    'description' => __('Enter the text for the featured stories.', 'pritam'),
+    'section'   => 'pritam_promo_section',
+    'settings'  => 'pritam_options[pritam_featured_stories_text]',
+    'type'      => 'text',
+    'priority'  => 5,
+    'active_callback'=>'pritam_promo_active_callback'
 
 ) );
 

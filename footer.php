@@ -12,6 +12,8 @@ global $pritam_theme_options;
 $copyright = wp_kses_post($pritam_theme_options['pritam-footer-copyright']);
 $recommend_cat = absint($pritam_theme_options['pritam_footer_top_recommendation']);
 $you_may_like_cat = absint($pritam_theme_options['pritam_footer_you_may_like']);
+$recommended_text = esc_html($pritam_theme_options['pritam_footer_recommended_text']);
+$you_may_like_text = esc_html($pritam_theme_options['pritam_footer_you_may_like_text']);
 if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') ) {
 	$count = 0;
 	for ( $i = 1; $i <= 4; $i++ )
@@ -57,7 +59,7 @@ $query_args_footer = array(
 <section class="recommend-posts pb-5">
     <div class="container">
         <div class="sec-title">
-            <h3><?php esc_html_e('Recommended','pritam'); ?></h3>
+            <h3><?php esc_html_e($recommended_text); ?></h3>
         </div>
         <!--sec-title end-->
         <div class="blog-items smaller-post">
@@ -116,7 +118,7 @@ $query_args_footer = array(
 	<div class="container">
 		<div class="blog-items ft-style py-5">
 		<div class="sec-title">
-            <h3><?php esc_html_e('You May Like..','pritam'); ?></h3>
+            <h3><?php esc_html_e($you_may_like_text); ?></h3>
         </div>
 			<?php
         	$query = new WP_Query($query_args_footer);

@@ -49,21 +49,21 @@ Pritam is distributed under the terms of the GNU GPL v2 or later.
  * Bootstrap v4.0.0-beta (https://getbootstrap.com) Copyright 2011-2017 The Bootstrap Authors Copyright 2011-2017 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 == Screenshot Images [CCO License] ==
-Image for theme screenshot, Copyright Trevor Paterson
+Image for theme screenshot, Copyright Clay Banks
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/R57YUC6GR4
+Source: https://stocksnap.io/photo/string-lights-LNYYCG845L
+
+Image for theme screenshot, Copyright Larm Rmah
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/dark-trees-ANESRR0FUD
 
 Image for theme screenshot, Copyright Burst
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/E5BW2K6ZYK
+Source: https://stocksnap.io/photo/woman-drinking-UEQ0178WUT
 
-Image for theme screenshot, Copyright Bench Accounting
+Image for theme screenshot, Copyright Garon Piceli
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/7LJXUWVX9S
-
-Image for theme screenshot, Copyright Daria Shevtsova
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/GAXFQX8BXD
+Source: https://stocksnap.io/photo/blonde-woman-IYNSZNJJ9U
 
 * Sidbear icons for the customizer are self created and license under GPL.
 

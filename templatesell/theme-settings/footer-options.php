@@ -8,7 +8,6 @@ $wp_customize->add_section('pritam_footer_section', array(
     'panel' => 'pritam_panel',
 ));
 
-
 /*Copyright Setting*/
 $wp_customize->add_setting('pritam_options[pritam-footer-copyright]', array(
     'capability' => 'edit_theme_options',
@@ -51,6 +50,23 @@ $wp_customize->add_control(
     )
 );
 
+/*Recommended Heading*/
+$wp_customize->add_setting('pritam_options[pritam_footer_recommended_text]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['pritam_footer_recommended_text'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('pritam_options[pritam_footer_recommended_text]', array(
+    'label' => __('Recommended Text', 'pritam'),
+    'description' => __('Enter RECOMMENDED section title.', 'pritam'),
+    'section' => 'pritam_footer_section',
+    'settings' => 'pritam_options[pritam_footer_recommended_text]',
+    'type' => 'text',
+    'priority' => 5,
+));
+
 
 /*You may liked section*/
 $wp_customize->add_setting( 'pritam_options[pritam_footer_you_may_like]', array(
@@ -76,3 +92,20 @@ $wp_customize->add_control(
         )
     )
 );
+
+/*You May Like Heading*/
+$wp_customize->add_setting('pritam_options[pritam_footer_you_may_like_text]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['pritam_footer_you_may_like_text'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('pritam_options[pritam_footer_you_may_like_text]', array(
+    'label' => __('You May Like Text', 'pritam'),
+    'description' => __('Enter You May Like Heading Title.', 'pritam'),
+    'section' => 'pritam_footer_section',
+    'settings' => 'pritam_options[pritam_footer_you_may_like_text]',
+    'type' => 'text',
+    'priority' => 5,
+));

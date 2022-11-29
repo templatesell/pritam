@@ -35,19 +35,6 @@ $wp_customize->add_setting('pritam_options[pritam-sidebar-single-page]', array(
     'sanitize_callback' => 'pritam_sanitize_select'
 ));
 
-// $wp_customize->add_control( 
-//     new Pritam_Radio_Image_Control(
-//         $wp_customize,
-//     'pritam_options[pritam-sidebar-single-page]', array(
-//     'choices' => pritam_sidebar_position_array(),
-//     'label' => __('Select Sidebar', 'pritam'),
-//     'description' => __('From Appearance > Customize > Widgets and add the widgets on the respected widget areas.', 'pritam'),
-//     'section' => 'pritam_single_page_section',
-//     'settings' => 'pritam_options[pritam-sidebar-single-page]',
-//     'type' => 'select',
-//     'priority' => 15,
-// )));
-
 /*Related Post Options*/
 $wp_customize->add_setting('pritam_options[pritam-single-page-related-posts]', array(
     'capability' => 'edit_theme_options',

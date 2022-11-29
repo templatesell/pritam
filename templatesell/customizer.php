@@ -35,6 +35,7 @@ if ( !function_exists('pritam_default_theme_options_values') ) :
     
             /*Boxes Section */
             'pritam_enable_promo'       => 1,
+            'pritam_featured_stories_text'=> esc_html__('FEATURED STORIES','pritam'),
             'pritam-promo-select-category'=> 0,
             
             /*Blog Page*/
@@ -66,6 +67,8 @@ if ( !function_exists('pritam_default_theme_options_values') ) :
             'pritam-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2022','pritam'),
             'pritam_footer_top_recommendation'=> 0,
             'pritam_footer_you_may_like'=> 0,
+            'pritam_footer_recommended_text'=> esc_html__('RECOMMENDED','pritam'),
+            'pritam_footer_you_may_like_text'=> esc_html__('YOU MAY LIKE..','pritam'),
 
             /*Breadcrumb Options*/
             'pritam-extra-breadcrumb' => 1,

@@ -9,13 +9,14 @@
  */
 global $pritam_theme_options;
 $promo_cat = absint($pritam_theme_options['pritam-promo-select-category']);
+$featured_stories = esc_html($pritam_theme_options['pritam_featured_stories_text']);
 
 if( $promo_cat > 0 )
 { ?>
     <section class="blog-section feat-stors pb-5">
             <div class="container">
                 <div class="sec-title">
-                    <h3><?php esc_html_e('Featured Stories','pritam'); ?> </h3>
+                    <h3><?php echo esc_html($featured_stories); ?> </h3>
                 </div><!--sec-title end-->
                 <div class="blog-items">
                     <div class="row">
