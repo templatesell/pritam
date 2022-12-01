@@ -5,26 +5,6 @@
 										Reset Css
 ===================================================================================== */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -39,9 +19,37 @@ body {
     font-weight: 400;
     line-height: 22px;
 }
-ul {
-	list-style: none;
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    color: #1a191e;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.18em;
+}
+
+h4 {
+  font-size: 1.12em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+
 a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -557,6 +565,8 @@ header {
 }
 .meta {
 	margin-bottom: -7px;
+	padding: 0;
+	margin-left: 0;
 }
 .meta li,
 .meta li a {
@@ -1035,6 +1045,7 @@ header {
 	display: block;
 	padding: 0 20px;
 	position: relative;
+	list-style: none;
 }
 .widget li:last-child a {
 	border-bottom: 0;
@@ -1044,8 +1055,8 @@ header {
 	position: absolute;
 	top: 50%;
 	left: 0;
-	width: 3px;
-	height: 3px;
+	width: 4px;
+	height:4px;
 	background-color: #262626;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
@@ -2182,7 +2193,9 @@ header.style2 .top-bar{
 
 /* ========================= STANDARD POST PAGE ========================== */
 
-
+.standard-post{
+	color: #575a5b;
+}
 .standard-post .post-title {
 	font-size: 30px;
 	line-height: 40px;
@@ -2192,6 +2205,7 @@ header.style2 .top-bar{
 .standard-post .meta {
 	margin-bottom: 4px;
 	margin-top: -14px;
+	padding: 0;
 }
 .standard-post .blog-img {
 	margin-bottom: 30px;
@@ -2210,13 +2224,6 @@ header.style2 .top-bar{
 	margin-bottom: 26px;
 	color: #575a5b;
 }
-.standard-post h4 {
-	color: #1a191e;
-	font-size: 21px;
-	font-weight: 700;
-	padding-top: 13px;
-	padding-bottom: 22px;
-}
 .standard-post blockquote {
 	text-align: center;
 	position: relative;
@@ -2224,6 +2231,7 @@ header.style2 .top-bar{
 	margin: 21px 0 2px 0;
 	display: inline-block;
 	width: 100%;
+	border: 0;
 }
 .standard-post blockquote:before {
 	content: '“';
@@ -2391,17 +2399,22 @@ header.style2 .top-bar{
 	padding: 39px 0 45px 0;
 }
 
-.single .blog-item a,
-.single .blog-item p a,
-.single .blog-item h1 a,
-.single .blog-item h2 a,
-.single .blog-item h3 a,
-.single .blog-item h4 a,
-.single .blog-item h5 a,
-.single .blog-item h6 a,
-.single .blog-item ul li a, 
-.single .blog-item ol li a{
+.single .blog-item .post-content a,
+.single .blog-item .post-content p a,
+.single .blog-item .post-content h1 a,
+.single .blog-item .post-content h2 a,
+.single .blog-item .post-content h3 a,
+.single .blog-item .post-content h4 a,
+.single .blog-item .post-content h5 a,
+.single .blog-item .post-content h6 a,
+.single .blog-item .post-content ul li a, 
+.single .blog-item .post-content ol li a{
   text-decoration: underline;
+}
+.standard-post ul, 
+.standard-post ol {
+    margin: 0 0 1.5em 0;
+    padding-left: 20px;
 }
 
 /* ========================= COMMENT SECTION ========================== */
@@ -2568,7 +2581,11 @@ ol .comment-respond{
   padding:20px 0;
   margin-bottom: 40px;
 }
-
+.ts-breadcrumbs .trail-items {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
 .ts-breadcrumbs .breadcrumbs-inner {
   display: -webkit-box;
   display: -ms-flexbox;
