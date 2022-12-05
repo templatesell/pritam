@@ -168,6 +168,11 @@ article.masonry-post {
 .top-bar .container {
 	position: relative;
 }
+nav ul{
+	margin: 0;
+	padding: 0;
+	
+}
 nav {
 	display: inline-block;
 }
@@ -2352,6 +2357,7 @@ header.style2 .top-bar{
 	float: left;
 	background-color: #efefef;
 	padding: 21px 17px;
+	list-style: none;
 }
 .post-control ul li:hover {
 	background-color: #77929f;

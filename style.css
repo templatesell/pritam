@@ -514,8 +514,13 @@ figure {
 }
 
 table {
+	border-collapse: collapse;
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+table td, table th{
+	border:1px solid #dee2e6;
+	padding:8px
 }
 
 /* Links
