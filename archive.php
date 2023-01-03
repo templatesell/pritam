@@ -34,31 +34,47 @@ get_header();
         <div class="row <?php echo esc_attr($sidebar); ?>">
 			<div id="primary" class="col-lg-8">
 				<main id="main" class="site-main">
+				<?php
+
+				if ( have_posts() ) :
+
+					if ( is_home() && ! is_front_page() ) :
+						?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
+						<?php
+					endif;
+
+					/* Masonry Start Section */
+					do_action('pritam_masonry_start_hook');
+					?>
 					<div class="row">
-					<?php if ( have_posts() ) : 
-					/* Start the Loop */
-					$i = 1;
-					while ( have_posts() ) :
-						the_post();
-						
-						if($i == 1){
-							get_template_part( 'template-parts/content', 'full' );
-						}else{
+						<?php
+						/* Start the Loop */
+						$i = 1;
+						while ( have_posts() ) :
+							the_post();
+							
+							if($i == 1){
+								get_template_part( 'template-parts/content', 'full' );
+							}else{
 
-						/*
-						 * Include the Post-Type-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						 */
+							/*
+							* Include the Post-Type-specific template for the content.
+							* If you want to override this in a child theme, then include a file
+							* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+							*/
 
-						get_template_part( 'template-parts/content', 'grid' );
-						}
+							get_template_part( 'template-parts/content', 'grid' );
+							}
 
-						$i++; endwhile; ?>
-					</div> 
-					<?php
+							$i++; endwhile; ?>
+					</div>
+					<?php 
+
 					/* Masonry end Section */
-					do_action('pritam_masonry_end_hook');
+					do_action('pritam_masonry_end_hook'); 
 
 					/**
 		             * pritam_action_navigation hook
@@ -66,7 +82,8 @@ get_header();
 		             *
 		             * @hooked pritam_action_navigation -  10
 		             */
-					do_action( 'pritam_action_navigation');
+
+		            do_action( 'pritam_action_navigation');
 
 				else :
 
@@ -74,12 +91,12 @@ get_header();
 
 				endif;
 				?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-		<?php get_sidebar(); ?>
+			
+				</main><!-- #main -->
+			</div><!-- #primary -->
+			<?php get_sidebar(); ?>
+		</div>
 	</div>
-</div>
 </section>
 
 <?php get_footer();
