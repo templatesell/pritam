@@ -775,7 +775,7 @@ header {
 	padding: 50px 0 0 0;
 }
 .n-pagination {
-	margin: 6px 0 0 0;
+	margin: 6px 0 20px 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
