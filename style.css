@@ -1,6 +1,6 @@
 /*
 Theme Name: Pritam
-Theme URI: https://www.templatesell.com/item/pritam
+Theme URI: 
 Author: templatesell
 Author URI: https://www.templatesell.com/
 Description: A perfect theme for blog and magazine site. With masonry layout and multiple blog page layout, this theme is the awesome and minimal theme. This theme has search option, off-canvas sidebar, multiple sidebar options, footer options, featured slider, promo boxed, footer widgets and many more. Besides that, this theme comes with added custom widgets for author information, featured posts, social icons, etc. It comes with primary color option to change the whole site color with a single click. More Details: https://www.templatesell.com/item/puskar-minimal-blog-wordpress-theme/
@@ -483,8 +483,8 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -518,9 +518,11 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
-table td, table th{
-	border:1px solid #dee2e6;
-	padding:8px
+
+table td,
+table th {
+	border: 1px solid #dee2e6;
+	padding: 8px
 }
 
 /* Links
@@ -528,6 +530,7 @@ table td, table th{
 a {
 	color: #4169e1;
 }
+
 a:hover,
 a:focus,
 a:active {
@@ -661,8 +664,8 @@ textarea {
 	top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
 	display: block;
 	left: auto;
 }
@@ -671,8 +674,8 @@ textarea {
 	width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
 	left: auto;
 }
 
@@ -703,10 +706,8 @@ textarea {
 }
 
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 

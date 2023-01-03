@@ -8,13 +8,6 @@
  */
 global $pritam_theme_options;
 $show_content_from = esc_attr($pritam_theme_options['pritam-content-show-from']);
-$read_more = esc_html($pritam_theme_options['pritam-read-more-text']);
-$masonry = esc_attr($pritam_theme_options['pritam-column-blog-page']);
-$image_location = esc_attr($pritam_theme_options['pritam-blog-image-layout']);
-$social_share = absint($pritam_theme_options['pritam-show-hide-share']);
-$date = absint($pritam_theme_options['pritam-show-hide-date']);
-$category = absint($pritam_theme_options['pritam-show-hide-category']);
-$author = absint($pritam_theme_options['pritam-show-hide-author']);
 
 ?>
 <div class="col-lg-6 col-md-6 col-sm-6 col-12">

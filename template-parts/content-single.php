@@ -61,7 +61,9 @@ $image = absint($pritam_theme_options['pritam-single-page-featured-image']);
                         <?php the_tags();  ?>
                     </div><!--post-catgs-list end-->
                     <?php 
+                    if($social_share == 1 ){
                           do_action( 'pritam_social_sharing' ,get_the_ID() );
+                    }
                       ?><!--social-links end-->
                     <div class="clearfix"></div>
                 </div><!--post-catgs-links end-->
