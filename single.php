@@ -16,9 +16,11 @@ get_header();
         <div class="row">
         	<div class="col-lg-12">
         		<div class="ts-breadcrumbs">
-	            	<?php 
-					// Breadcrumb hook
-					do_action('pritam_breadcrumb_options_hook'); ?>
+        			<div class="breadcrumbs-inner">
+		            	<?php 
+						// Breadcrumb hook
+						do_action('pritam_breadcrumb_options_hook'); ?>
+					</div>
 				</div>
         	</div>
         </div>

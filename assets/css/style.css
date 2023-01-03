@@ -996,7 +996,13 @@ header {
 	right: -2px;
 }
 
-
+/* ===================== WIDGET COMMENTS ====================== */
+.widget ol li{
+	padding:0;
+}
+.widget ol li:before{
+	content: initial;
+}
 /* ===================== WIDGET RECENT POSTS ====================== */
 
 .widget-recent-post {
