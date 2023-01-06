@@ -27,7 +27,6 @@ $show_content_from = esc_attr($pritam_theme_options['pritam-content-show-from'])
                 ?>
                 <ul class="meta">
                     <li><?php pritam_posted_on()?></li>
-                    <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                     <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                 </ul>
                 <?php

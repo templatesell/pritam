@@ -59,7 +59,7 @@ $query_args_footer = array(
 <section class="recommend-posts pb-5">
     <div class="container">
         <div class="sec-title">
-            <h3><?php esc_html_e($recommended_text); ?></h3>
+            <h3><?php echo esc_html($recommended_text); ?></h3>
         </div>
         <!--sec-title end-->
         <div class="blog-items smaller-post">
@@ -94,7 +94,6 @@ $query_args_footer = array(
 			              	</h3>
                             <ul class="meta">
 			                  <li><?php pritam_posted_on()?></li>
-			                  <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
 			                  <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
 			                </ul>
                         </div>
@@ -107,7 +106,9 @@ $query_args_footer = array(
 				} // end if
 				?>
             </div>
-        <?php endif; ?>
+        <?php 
+		wp_reset_postdata();
+	endif; ?>
         </div>
     </div>
 </section>
@@ -118,7 +119,7 @@ $query_args_footer = array(
 	<div class="container">
 		<div class="blog-items ft-style py-5">
 		<div class="sec-title">
-            <h3><?php esc_html_e($you_may_like_text); ?></h3>
+            <h3><?php echo esc_html($you_may_like_text); ?></h3>
         </div>
 			<?php
         	$query = new WP_Query($query_args_footer);
@@ -153,7 +154,9 @@ $query_args_footer = array(
 				} // end if
 				?>
 			</div>
-			<?php endif; ?>
+			<?php 
+		wp_reset_postdata(); 
+		endif; ?>
 		</div><!--blog-items end-->
 
 		<div class="footer-content">

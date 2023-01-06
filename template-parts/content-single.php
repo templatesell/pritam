@@ -22,7 +22,6 @@ $image = absint($pritam_theme_options['pritam-single-page-featured-image']);
                                 <?php pritam_entry_meta(); ?>
                             </li>
                             <li><?php pritam_posted_on(); ?></li>
-                            <li><i class="la la-eye"></i><?php echo Pritam_GetPostViews(get_the_ID()); ?></li>
                             <li><a href="#" title=""><i class="la la-comment-o"></i><?php comments_number(); ?></a></li>
                         </ul>
                     <?php endif; ?>

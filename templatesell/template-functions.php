@@ -43,32 +43,6 @@ function pritam_comments_number ($output, $number) {
 	return $output;
   }
   add_filter ('comments_number', 'pritam_comments_number', 10, 2);
-  
-  
-  
-  function Pritam_GetPostViews($postID){
-	  $count_key = 'post_views_count';
-	  $count = get_post_meta($postID, $count_key, true);
-	  if($count==''){
-		  delete_post_meta($postID, $count_key);
-		  add_post_meta($postID, $count_key, '0');
-		  return "0";
-	  }
-	  return $count.'';
-  }
-   
-  function Pritam_SetPostViews($postID) {
-	  $count_key = 'post_views_count';
-	  $count = get_post_meta($postID, $count_key, true);
-	  if($count==''){
-		  $count = 0;
-		  delete_post_meta($postID, $count_key);
-		  add_post_meta($postID, $count_key, '0');
-	  }else{
-		  $count++;
-		  update_post_meta($postID, $count_key, $count);
-	  }
-  }
   /**
    * Comment Layout
    */
