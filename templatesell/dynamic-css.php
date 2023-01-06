@@ -36,6 +36,7 @@ if (!function_exists('pritam_dynamic_css')) :
             .sub-menu li a:before,
             .blobs .blob-center,
             .show-more,
+            .widget.widget_tag_cloud .tag-cloud-link:hover,
             .post-control ul li:hover,
             .comment-respond .form-submit input[type='submit'],
             .blob{ 

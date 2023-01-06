@@ -1054,9 +1054,12 @@ header {
 }
 .widget li {
 	display: block;
-	padding: 0 20px;
+	padding: 9px 20px;
 	position: relative;
 	list-style: none;
+	border-bottom: 1px solid #e6e6e6;
+
+
 }
 .widget li:last-child a {
 	border-bottom: 0;
@@ -1081,19 +1084,35 @@ header {
 	border-radius: 100px;
 }
 .widget li a {
-	display: block;
 	color: #757479;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 11px;
 	letter-spacing: 0.7px;
-	border-bottom: 1px solid #e6e6e6;
-	padding: 9px 0;
 }
 .widget li a:hover {
 	padding-left: 10px;
 }
-
+.widget_archive li{
+	text-align: right;
+}
+.widget_archive li a{
+	float: left;
+}
+/* ===================== WIDGET-TAGS ====================== */
+.widget.widget_tag_cloud .tag-cloud-link {
+    text-transform: capitalize;
+    padding: 6px 12px;
+    line-height: 1;
+    background: #f7f7f7;
+    color: #000;
+    font-size: 11px !important;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.widget.widget_tag_cloud .tag-cloud-link:hover {
+    color: #fff;
+}
 /* ===================== WIDGET-FB ====================== */
 
 .widget-fb {
@@ -2533,6 +2552,7 @@ ol .comment-respond{
 	font-size: 11px;
 	font-weight: 700; 
 	text-transform: uppercase;
+	text-decoration: underline;
 }
 .comment-respond.cont-form-sec {
 	padding: 0;
@@ -2582,6 +2602,9 @@ ol .comment-respond{
 	border:0;
 	cursor: pointer;
 
+}
+.comment-text a{
+	text-decoration: underline;
 }
 .main-content.p-80 {
 	padding: 80px 0 100px 0;
@@ -2692,6 +2715,7 @@ ol .comment-respond{
 }
 .search-no-results .search-form label{
 	width: 100%;
+	margin-bottom: 0;
 }
 .search-no-results .search-form .search-field{
 	background-color: #FFF;
