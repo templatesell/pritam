@@ -350,8 +350,14 @@ header {
 .has-post-thumbnail .blog-items.main .blog-img > img {
 	width: 100%;
 }
+
 .slider-wrapper .blog-items.main .blog-img > img{
 	height: 100%;
+}
+.slider-wrapper .blog-items.main .blog-img > img{
+	display: block;
+    width: 100vw;
+    object-fit: cover;
 }
 .has-post-thumbnail .blog-items.main .blog-info,
 .slider-wrapper .blog-items.main .blog-info {
@@ -2765,6 +2771,9 @@ ol .comment-respond{
     line-height: 30px;
     border: 1px solid rgba(255,255,255,0.30);
     text-align: center;
+}
+.social-icon-links ul .page_item {
+    display: none;
 }
 .social-icon-links ul li:hover a:before {
   color: #77929f;

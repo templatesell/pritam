@@ -13,7 +13,9 @@ $args = array(
  'posts_per_page' => 3,
  'paged' => 1,
  'cat' => $slide_id,
- 'post_type' => 'post'
+ 'post_type' => 'post',
+ 'ignore_sticky_posts' => 1,
+
 );
 ?>
 
