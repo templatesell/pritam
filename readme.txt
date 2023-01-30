@@ -30,7 +30,10 @@ Pritam includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
-= 1.0.0 - February 06 2020 =
+= 1.0.4 - Janurary 30 2023 =
+* Initial release
+
+= 1.0.0 - January 10 2023 =
 * Initial release
 
 == Credits ==
