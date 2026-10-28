@@ -15,11 +15,7 @@ if (!function_exists('pritam_dynamic_css')) :
         global $pritam_theme_options;
 
         /* Color Options Options */
-        /*
-         * esc_attr() will happily pass "red; }" into a stylesheet.
-         * sanitize_hex_color() returns null for anything that is not a hex
-         * colour, and the theme default stands in for it.
-         */
+        // Use the default when the value is not a hex colour.
         $pritam_defaults      = pritam_default_theme_options_values();
         $pritam_primary_color = sanitize_hex_color( $pritam_theme_options['pritam_primary_color'] );
 

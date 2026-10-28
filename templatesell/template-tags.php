@@ -26,11 +26,7 @@ if ( ! function_exists( 'pritam_posted_on' ) ) :
 	$posted_on = 
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-		/*
-		 * A duplicate of pritam_posted_by()'s byline used to be built here and
-		 * thrown away, which also put a second "By %s" into the translation
-		 * template differing from the one in use only by its first letter.
-		 */
+		// Byline comes from pritam_posted_by().
 		echo '<span class="posted-on">' . $posted_on . '</span>';
 	}
 endif;

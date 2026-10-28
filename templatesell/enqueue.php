@@ -12,26 +12,14 @@ function pritam_scripts() {
 
 	global $pritam_theme_options;
 
-	/*
-	 * Lato, Mulish and Playfair Display are served from the theme.
-	 *
-	 * They used to arrive twice over: once from this file, and again from an
-	 * @import at the top of assets/css/style.css - which asked for "Muli", the
-	 * name Google retired when the family became Mulish, so the two requests
-	 * did not even agree on what to fetch. Both handed the visitor's IP address
-	 * to a third party before they had agreed to anything, and the @import
-	 * blocked rendering until it resolved.
-	 *
-	 * Monsieur La Doulaise was fetched on every page view as well and is not
-	 * named anywhere in the theme's CSS or templates, so it has been dropped.
-	 */
+	// Locally hosted webfonts.
 	wp_enqueue_style( 'pritam-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), PRITAM_VERSION );
 
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(), PRITAM_VERSION );
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0' );
 
-	/* The handle used to say font-awesome while pointing at Line Awesome. */
+	// Line Awesome icons.
 	wp_enqueue_style( 'line-awesome', get_template_directory_uri() . '/css/line-awesome.min.css', array(), '1.1.0' );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), '5.6.1' );
@@ -58,12 +46,7 @@ function pritam_scripts() {
 		: '';
 
 	if ( 'masonry-post' === $pritam_layout || 'one-column' === $pritam_layout ) {
-		/*
-		 * masonry and imagesloaded both ship with WordPress. The theme carried
-		 * its own copy of imagesloaded and enqueued it on every page, but a
-		 * handle core has already registered keeps core's source, so that copy
-		 * was never served.
-		 */
+		// masonry and imagesloaded come from WordPress core.
 		wp_enqueue_script( 'imagesloaded' );
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'pritam-custom-masonry', get_template_directory_uri() . '/assets/js/custom-masonry.js', array( 'jquery', 'masonry', 'imagesloaded' ), PRITAM_VERSION, true );
@@ -73,15 +56,10 @@ function pritam_scripts() {
 
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/lib/slick/slick.js', array( 'jquery' ), '1.8.0', true );
 
-	/* Both of these call jQuery and neither declared it. */
+	// Both scripts depend on jQuery.
 	wp_enqueue_script( 'pritam-script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), PRITAM_VERSION, true );
 
-	/*
-	 * The submenu toggles script.js builds need translatable labels, and they
-	 * have to be on this handle: pritam_ajax belongs to 'pritam-custom', which
-	 * is enqueued after this file, so its data is printed too late to be read
-	 * here.
-	 */
+	// Labels for the submenu toggles.
 	wp_localize_script(
 		'pritam-script',
 		'pritam_menu',

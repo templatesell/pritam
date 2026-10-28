@@ -8,9 +8,7 @@
  */
 
 /**
- * The theme version, used to bust the cache on every stylesheet and script
- * the theme enqueues. They were versioned "4.5.0", "20200412" or "202"
- * regardless of what had changed in them.
+ * Theme version, used for asset cache busting.
  */
 if ( ! defined( 'PRITAM_VERSION' ) ) {
 	define( 'PRITAM_VERSION', '1.0.5' );
@@ -94,14 +92,10 @@ if ( ! function_exists( 'pritam_setup' ) ) :
 		// Add support for default block styles.
 		add_theme_support( 'wp-block-styles' );
 
-		// Let a wide or full-width block use the room the layout has for it.
+		// Wide and full-width block alignment.
 		add_theme_support( 'align-wide' );
 
-		/*
-		 * The theme has advertised custom-background in its tags since it shipped
-		 * without ever declaring support for it, so the option never appeared in
-		 * the customizer.
-		 */
+		// Custom background support.
 		add_theme_support(
 			'custom-background',
 			array(
@@ -110,11 +104,7 @@ if ( ! function_exists( 'pritam_setup' ) ) :
 			)
 		);
 
-		/*
-		 * Editor styles. css/editor-styles.css shipped empty, and was enqueued on
-		 * enqueue_block_editor_assets, which no longer reaches the content now that
-		 * the post editor is an iframe.
-		 */
+		// Editor styles.
 		add_editor_style( array( 'assets/fonts/fonts.css', 'css/editor-styles.css' ) );
 
 		// Add support for Yoast SEO Breadcrumbs.
@@ -212,9 +202,7 @@ add_action( 'widgets_init', 'pritam_widgets_init' );
  * Load TS Core Files
  */
 /**
- * Register the theme's own block styles.
- *
- * Hooked to init, because a style label is a translated string.
+ * Register the theme's block styles.
  */
 function pritam_register_block_styles() {
 

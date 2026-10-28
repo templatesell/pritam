@@ -1,12 +1,6 @@
 /*
  * Pritam editor styles.
- *
- * This file shipped empty, and the way it was loaded no longer reaches the
- * content now that the post editor is an iframe - so writing a post looked
- * nothing like reading one. The old loader also pulled Muli and Prata from
- * Google on every editor load, neither of which the theme uses.
- *
- * These rules mirror the front end, and are loaded through add_editor_style().
+ * Mirrors the front end, loaded with add_editor_style().
  */
 
 .editor-styles-wrapper {
@@ -65,10 +59,7 @@
     font-size: 16px;
 }
 
-/*
- * A link in post content carries the theme accent and an underline, so the
- * editor shows it the way it will be read.
- */
+/* Post content links are underlined. */
 .editor-styles-wrapper a {
     color: #5b7683;
     text-decoration: underline;

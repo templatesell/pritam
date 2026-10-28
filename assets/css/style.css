@@ -1,10 +1,5 @@
 
-/*
- * The families are enqueued from the theme now - see templatesell/enqueue.php.
- * This used to be an @import to fonts.googleapis.com, which blocked rendering
- * until it resolved and asked for "Muli", the name Google retired when the
- * family became Mulish.
- */
+/* Fonts are enqueued from the theme, see templatesell/enqueue.php. */
 
 /* ==================================================================================
 										Reset Css
@@ -19,8 +14,7 @@ body {
 	overflow-x: hidden;
     font-family: 'Mulish', sans-serif;
     line-height: 1.5;
-    /* Was #9c9c9c, which measures 2.75:1 against the white page - every
-       paragraph on the site was below the readable minimum. */
+    /* Paragraph colour. */
     color: #6f6f6f;
     font-size: 15px;
     font-weight: 400;
@@ -1791,8 +1785,7 @@ header.style2 .top-bar{
 	-o-transform: translateX(0);
 	transform: translateX(0);
 }
-/* Submenu toggles are real buttons now; strip the UA button chrome so the
-   button keeps flowing exactly where the anchor did. */
+/* Submenu toggles are buttons, reset the default button styles. */
 #primary-menu .sub-toggle {
 	background: none;
 	border: 0;
@@ -2874,10 +2867,7 @@ ol .comment-respond{
    Pritam 1.0.5 - a visible focus ring and the theme's block styles
    ========================================================================== */
 
-/*
- * Keyboard focus had no styling of its own, so it fell to whatever the browser
- * drew - and several controls suppressed even that.
- */
+/* Visible keyboard focus. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -2948,15 +2938,7 @@ textarea:focus:not(:focus-visible),
 }
 
 
-/* ==========================================================================
-   Pritam 1.0.5 - comment form
-   ==========================================================================
-
-   comments.php built the two-up name/email layout from Bootstrap grid markup
-   split across three field definitions, which came apart as soon as a reader
-   was logged in. The fields are standard WordPress markup now and the layout
-   is done here.
-   ========================================================================== */
+/* Comment form */
 
 .comment-form {
     display: -webkit-box;
@@ -2985,10 +2967,7 @@ textarea:focus:not(:focus-visible),
     }
 }
 
-/*
- * The website field is type="url", which the theme's field rule never listed
- * alongside text and email - so it rendered without the theme's styling at all.
- */
+/* Website field styling. */
 .form-field input[type="url"] {
     width: 100%;
     background-color: #ffffff;
