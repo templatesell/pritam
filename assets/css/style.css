@@ -1,20 +1,27 @@
 
-@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Playfair+Display:400,400i,700,700i,900,900i');
+/*
+ * The families are enqueued from the theme now - see templatesell/enqueue.php.
+ * This used to be an @import to fonts.googleapis.com, which blocked rendering
+ * until it resolved and asked for "Muli", the name Google retired when the
+ * family became Mulish.
+ */
 
-/* ================================================================================== 
+/* ==================================================================================
 										Reset Css
 ===================================================================================== */
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
 	overflow-x: hidden;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Mulish', sans-serif;
     line-height: 1.5;
-    color: #9c9c9c;
+    /* Was #9c9c9c, which measures 2.75:1 against the white page - every
+       paragraph on the site was below the readable minimum. */
+    color: #6f6f6f;
     font-size: 15px;
     font-weight: 400;
     line-height: 22px;
@@ -101,7 +108,7 @@ img {
 p {
 	font-size: 15px;
 	line-height: 22px;
-	color: #83898a;
+	color: #6f7476;
 	font-family: 'Lato';
 }
 body.no-scroll {
@@ -171,7 +178,7 @@ article.masonry-post {
 nav ul{
 	margin: 0;
 	padding: 0;
-	
+
 }
 nav {
 	display: inline-block;
@@ -181,7 +188,8 @@ nav ul li {
 	padding: 19px 11px 20px 11px;
 	position: relative;
 }
-nav ul li a {
+nav ul li a,
+nav ul li .sub-toggle {
 	display: inline-block;
 	color: #1a191e;
 	font-size: 11px;
@@ -189,7 +197,8 @@ nav ul li a {
 	text-transform: uppercase;
 	letter-spacing: 0.6px;
 }
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li .sub-toggle:hover {
 	color: #1a191e;
 }
 nav > ul > li:first-child {
@@ -326,7 +335,7 @@ header {
 .slider-wrapper .blog-items.main .blog-info .post-category,
 .has-post-thumbnail .blog-items.main .blog-info .post-category{
 	display: none;
-} 
+}
 .blog-img:before,
 .page-img:before {
 	content: '';
@@ -345,7 +354,7 @@ header {
 	opacity: 1;
 	visibility: visible;
 	background-color: rgba(42,42,42,0.60);
-} 
+}
 .slider-wrapper .blog-items.main .blog-img > img,
 .has-post-thumbnail .blog-items.main .blog-img > img {
 	width: 100%;
@@ -583,7 +592,7 @@ header {
 .meta li a {
 	display: inline-block;
 	font-size: 11px;
-	color: #a1a4a6;
+	color: #6f7476;
 	font-weight: 700;
 	position: relative;
 	text-transform: uppercase;
@@ -605,7 +614,7 @@ header {
 	right: -3px;
 	width: 2px;
 	height: 1px;
-	background-color: #a1a4a6;
+	background-color: #6f7476;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -753,7 +762,7 @@ header {
 	line-height: 20px;
 	margin-bottom: 6px;
 }
-.blog-item:hover .blog-img > a > img, 
+.blog-item:hover .blog-img > a > img,
 .blog-item:hover .blog-img > img {
 	filter: grayscale(100%);
 	-webkit-transform: scale(1.1);
@@ -770,7 +779,7 @@ header {
 
 .blog-items.style2.sec-padding {
 	padding: 45px 0 11px 0;
-} 
+}
 
 
 .no-overlay:before {
@@ -882,7 +891,7 @@ header {
 	display: table-cell;
 	width: 100%;
 	vertical-align: middle;
-	
+
 }
 .wd-post-info > .post-title {
 	font-size: 13px;
@@ -892,7 +901,7 @@ header {
 }
 .post-date {
 	display: inline-block;
-	color: #a1a4a6;
+	color: #6f7476;
 	font-size: 11px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -936,7 +945,7 @@ header {
 }
 .widget-social-links li span {
 	display: block;
-	color: #a5a5a5;
+	color: #6f7476;
 	font-size: 13px;
 }
 .facebook {
@@ -977,7 +986,7 @@ header {
 }
 .subscribe-wd .subscribe input {
 	width: 100%;
-	color: #a5a5a5;
+	color: #6f7476;
 	font-size: 13px;
 	padding: 0 16px;
 	height: 38px;
@@ -1198,7 +1207,7 @@ header {
 	box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 .post-imgs > h5 {
-	color: #a5a5a5;
+	color: #6f7476;
 	font-size: 12px;
 	font-family: 'Lato';
 	margin-bottom: 3px;
@@ -1567,15 +1576,15 @@ header.style2 .top-bar{
 	margin-bottom: 16px;
 }
 .form-field input[type="text"],
-.form-field input[type="email"], 
+.form-field input[type="email"],
 .comment-form textarea {
 	width: 100%;
 	background-color: #ffffff;
-	color: #a5a5a5;
+	color: #6f7476;
 	font-size: 13px;
 	font-family: 'Lato';
 	border:0;
-} 
+}
 .form-field input[type="text"],
 .form-field input[type="email"] {
 	padding: 0 18px;
@@ -1650,7 +1659,7 @@ header.style2 .top-bar{
 .search-page form .form-field input[type="search"] {
 	width: 100%;
 	padding: 20px 45px;
-	color: #83898a;
+	color: #6f7476;
 	font-size: 27px;
 	background-color: inherit;
 	border:0;
@@ -1662,7 +1671,7 @@ header.style2 .top-bar{
 }
 .search-page .form-field .search-submit {
 	padding: 20px 45px;
-	color: #83898a;
+	color: #6f7476;
 	font-size: 27px;
 	background-color: inherit;
 	border:0;
@@ -1720,7 +1729,7 @@ header.style2 .top-bar{
 	padding: 9px 20px;
 }
 
-.navbar-menu .children li:last-child:before, 
+.navbar-menu .children li:last-child:before,
 .navbar-menu .sub-menu li:last-child:before {
 	display: none;
 }
@@ -1782,8 +1791,17 @@ header.style2 .top-bar{
 	-o-transform: translateX(0);
 	transform: translateX(0);
 }
-.navbar-menu .children li a.sub-toggle,
-.navbar-menu .sub-menu li a.sub-toggle{
+/* Submenu toggles are real buttons now; strip the UA button chrome so the
+   button keeps flowing exactly where the anchor did. */
+#primary-menu .sub-toggle {
+	background: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	line-height: inherit;
+}
+.navbar-menu .children li .sub-toggle,
+.navbar-menu .sub-menu li .sub-toggle{
 	display: none;
 }
 
@@ -1894,7 +1912,7 @@ header.style2 .top-bar{
 		min-width: 100%;
 		display: none;
 	}
-	.navbar-menu .sub-menu, 
+	.navbar-menu .sub-menu,
 	.navbar-menu .children {
 	    box-shadow: none;
 	    position: static;
@@ -1911,7 +1929,7 @@ header.style2 .top-bar{
 	    transform: translateY(0);
 	    padding-left: 15px;
 	}
-	.navbar-menu .children li:before, 
+	.navbar-menu .children li:before,
 	.navbar-menu .sub-menu li:before{
 		content: inherit;
 	}
@@ -1931,17 +1949,17 @@ header.style2 .top-bar{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 
@@ -1993,11 +2011,11 @@ header.style2 .top-bar{
   -webkit-animation: blob-grow linear 3.4s infinite;
           animation: blob-grow linear 3.4s infinite;
   border-radius: 50%;
-  -webkit-box-shadow: 0 -10px 40px -5px #77929f	;
-  -moz-box-shadow: 0 -10px 40px -5px #77929f	;
-  -ms-box-shadow: 0 -10px 40px -5px #77929f	;
-  -o-box-shadow: 0 -10px 40px -5px #77929f	;
-  box-shadow: 0 -10px 40px -5px #77929f	;
+  -webkit-box-shadow: 0 -10px 40px -5px #5b7683	;
+  -moz-box-shadow: 0 -10px 40px -5px #5b7683	;
+  -ms-box-shadow: 0 -10px 40px -5px #5b7683	;
+  -o-box-shadow: 0 -10px 40px -5px #5b7683	;
+  box-shadow: 0 -10px 40px -5px #5b7683	;
 }
 
 .blob {
@@ -2275,7 +2293,7 @@ header.style2 .top-bar{
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	color: #77929f;
+	color: #5b7683;
 	font-size: 75px;
 	font-family: 'Playfair Display';
 }
@@ -2364,7 +2382,7 @@ header.style2 .top-bar{
 	width: auto;
 	height: auto;
 	line-height: inherit;
-	color: #83898a;
+	color: #6f7476;
 	text-align: left;
 	font-size: 13px;
 }
@@ -2391,7 +2409,7 @@ header.style2 .top-bar{
 	list-style: none;
 }
 .post-control ul li:hover {
-	background-color: #77929f;
+	background-color: #5b7683;
 }
 .post-control ul li:hover a {
 	color: #ffffff;
@@ -2444,11 +2462,11 @@ header.style2 .top-bar{
 .single .blog-item .post-content h4 a,
 .single .blog-item .post-content h5 a,
 .single .blog-item .post-content h6 a,
-.single .blog-item .post-content ul li a, 
+.single .blog-item .post-content ul li a,
 .single .blog-item .post-content ol li a{
   text-decoration: underline;
 }
-.standard-post ul, 
+.standard-post ul,
 .standard-post ol {
     margin: 0 0 1.5em 0;
     padding-left: 20px;
@@ -2527,7 +2545,7 @@ ol .comment-respond{
 
 }
 .cm-right span {
-	color: #a1a4a6;
+	color: #6f7476;
 	font-size: 11px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -2542,7 +2560,7 @@ ol .comment-respond{
 	right: -3px;
 	width: 2px;
 	height: 1px;
-	background-color: #a1a4a6;
+	background-color: #6f7476;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -2554,9 +2572,9 @@ ol .comment-respond{
 }
 .reply a{
 	display: inline-block;
-	color: #77929f;
+	color: #5b7683;
 	font-size: 11px;
-	font-weight: 700; 
+	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: underline;
 }
@@ -2570,13 +2588,13 @@ ol .comment-respond{
 	margin-bottom: 16px;
 }
 .comment-respond .sec-title  h3 {
-	color: #a1a4a6;
+	color: #6f7476;
     width: 100%;
     padding-right: 0;
 }
 .comment-respond .sec-title  h3 small a{
 	display: inline-block;
-	color: #77929f;
+	color: #5b7683;
 	font-size: 11px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -2596,7 +2614,7 @@ ol .comment-respond{
 	margin-bottom: 16px;
 }
 .comment-respond .form-submit input[type="submit"] {
-	background-color: #77929f;
+	background-color: #5b7683;
 	color: #ffffff;
 	font-size: 11px;
 	font-weight: 700;
@@ -2679,7 +2697,7 @@ ol .comment-respond{
 .ts-breadcrumbs ul li a {
 	display: inline-block;
 	font-size: 11px;
-	color: #a1a4a6;
+	color: #6f7476;
 	font-weight: 700;
 	position: relative;
 	text-transform: uppercase;
@@ -2776,7 +2794,7 @@ ol .comment-respond{
     display: none;
 }
 .social-icon-links ul li:hover a:before {
-  color: #77929f;
+  color: #5b7683;
 }
 .social-icon-links ul li a[href*="facebook.com"]:before {
   content: "\f39e";
@@ -2852,4 +2870,158 @@ ol .comment-respond{
 }
 
 
+/* ==========================================================================
+   Pritam 1.0.5 - a visible focus ring and the theme's block styles
+   ========================================================================== */
+
+/*
+ * Keyboard focus had no styling of its own, so it fell to whatever the browser
+ * drew - and several controls suppressed even that.
+ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #5b7683;
+    outline-offset: 2px;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    outline: 2px solid #5b7683;
+    outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ------------------------------------------------- the theme's block styles */
+
+.is-style-pritam-lead {
+    font-size: 19px;
+    line-height: 30px;
+    color: #1a191e;
+}
+
+.is-style-pritam-boxed {
+    padding: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #e6e6e6;
+}
+
+.is-style-pritam-plain-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.is-style-pritam-plain-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.is-style-pritam-plain-list li:last-child {
+    border-bottom: 0;
+}
+
+
+/* ==========================================================================
+   Pritam 1.0.5 - comment form
+   ==========================================================================
+
+   comments.php built the two-up name/email layout from Bootstrap grid markup
+   split across three field definitions, which came apart as soon as a reader
+   was logged in. The fields are standard WordPress markup now and the layout
+   is done here.
+   ========================================================================== */
+
+.comment-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.comment-form > * {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    min-width: 0;
+}
+
+@media (min-width: 576px) {
+
+    .comment-form-author,
+    .comment-form-email {
+        -ms-flex: 0 1 calc(50% - 8px);
+        flex: 0 1 calc(50% - 8px);
+    }
+
+    .comment-form-author {
+        margin-right: 16px;
+    }
+}
+
+/*
+ * The website field is type="url", which the theme's field rule never listed
+ * alongside text and email - so it rendered without the theme's styling at all.
+ */
+.form-field input[type="url"] {
+    width: 100%;
+    background-color: #ffffff;
+    color: #6f7476;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+    border: 0;
+    padding: 0 18px;
+    height: 50px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #1a191e;
+}
+
+.comment-form .required {
+    color: #5b7683;
+}
+
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+    margin-bottom: 16px;
+}
+
+.comment-form .form-submit {
+    margin-bottom: 0;
+}
 

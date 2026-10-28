@@ -7,6 +7,15 @@
  * @package Pritam
  */
 
+/**
+ * The theme version, used to bust the cache on every stylesheet and script
+ * the theme enqueues. They were versioned "4.5.0", "20200412" or "202"
+ * regardless of what had changed in them.
+ */
+if ( ! defined( 'PRITAM_VERSION' ) ) {
+	define( 'PRITAM_VERSION', '1.0.5' );
+}
+
 if ( ! function_exists( 'pritam_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -24,7 +33,7 @@ if ( ! function_exists( 'pritam_setup' ) ) :
 		 * If you're building a theme based on Pritam, use a find and replace
 		 * to change 'pritam' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'pritam' );
+		load_theme_textdomain( 'pritam', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -43,7 +52,7 @@ if ( ! function_exists( 'pritam_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		
+
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -84,6 +93,29 @@ if ( ! function_exists( 'pritam_setup' ) ) :
 
 		// Add support for default block styles.
 		add_theme_support( 'wp-block-styles' );
+
+		// Let a wide or full-width block use the room the layout has for it.
+		add_theme_support( 'align-wide' );
+
+		/*
+		 * The theme has advertised custom-background in its tags since it shipped
+		 * without ever declaring support for it, so the option never appeared in
+		 * the customizer.
+		 */
+		add_theme_support(
+			'custom-background',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		);
+
+		/*
+		 * Editor styles. css/editor-styles.css shipped empty, and was enqueued on
+		 * enqueue_block_editor_assets, which no longer reaches the content now that
+		 * the post editor is an iframe.
+		 */
+		add_editor_style( array( 'assets/fonts/fonts.css', 'css/editor-styles.css' ) );
 
 		// Add support for Yoast SEO Breadcrumbs.
         add_theme_support( 'yoast-seo-breadcrumbs' );
@@ -134,10 +166,10 @@ if ( ! function_exists( 'pritam_setup' ) ) :
          *
          * @link https://developer.wordpress.org/reference/functions/add_image_size/
          */
-        
-        add_image_size('pritam-thumbnail-size', 960, 468, true); 
-        add_image_size('pritam-related-size', 680, 494, true); 
-        add_image_size('pritam-promo-post', 800, 500, true); 
+
+        add_image_size('pritam-thumbnail-size', 960, 468, true);
+        add_image_size('pritam-related-size', 680, 494, true);
+        add_image_size('pritam-promo-post', 800, 500, true);
         add_image_size('pritam-related-post-thumbnails', 850, 550, true );
 	}
 endif;
@@ -179,4 +211,73 @@ add_action( 'widgets_init', 'pritam_widgets_init' );
 /**
  * Load TS Core Files
  */
+/**
+ * Register the theme's own block styles.
+ *
+ * Hooked to init, because a style label is a translated string.
+ */
+function pritam_register_block_styles() {
+
+	if ( ! function_exists( 'register_block_style' ) ) {
+		return;
+	}
+
+	register_block_style( 'core/paragraph', array( 'name' => 'pritam-lead', 'label' => __( 'Lead paragraph', 'pritam' ) ) );
+	register_block_style( 'core/group', array( 'name' => 'pritam-boxed', 'label' => __( 'Boxed', 'pritam' ) ) );
+	register_block_style( 'core/list', array( 'name' => 'pritam-plain-list', 'label' => __( 'Plain', 'pritam' ) ) );
+}
+add_action( 'init', 'pritam_register_block_styles' );
+
+/**
+ * Register the theme's block patterns.
+ */
+function pritam_register_block_patterns() {
+
+	if ( ! function_exists( 'register_block_pattern' ) ) {
+		return;
+	}
+
+	if ( function_exists( 'register_block_pattern_category' ) ) {
+		register_block_pattern_category( 'pritam', array( 'label' => __( 'Pritam', 'pritam' ) ) );
+	}
+
+	register_block_pattern(
+		'pritam/standfirst',
+		array(
+			'title'       => __( 'Standfirst', 'pritam' ),
+			'categories'  => array( 'pritam' ),
+			'description' => __( 'An opening paragraph set larger than the body text.', 'pritam' ),
+			'content'     => '<!-- wp:paragraph {"className":"is-style-pritam-lead"} --><p class="is-style-pritam-lead">'
+				. esc_html__( 'Open with the sentence a reader needs before any of the rest of it makes sense.', 'pritam' )
+				. '</p><!-- /wp:paragraph -->',
+		)
+	);
+
+	register_block_pattern(
+		'pritam/two-up',
+		array(
+			'title'       => __( 'Two columns of text', 'pritam' ),
+			'categories'  => array( 'pritam' ),
+			'description' => __( 'Two equal columns of running text.', 'pritam' ),
+			'content'     => '<!-- wp:columns --><div class="wp-block-columns">'
+				. '<!-- wp:column --><div class="wp-block-column"><!-- wp:paragraph --><p></p><!-- /wp:paragraph --></div><!-- /wp:column -->'
+				. '<!-- wp:column --><div class="wp-block-column"><!-- wp:paragraph --><p></p><!-- /wp:paragraph --></div><!-- /wp:column -->'
+				. '</div><!-- /wp:columns -->',
+		)
+	);
+
+	register_block_pattern(
+		'pritam/quote-break',
+		array(
+			'title'       => __( 'Pull quote break', 'pritam' ),
+			'categories'  => array( 'pritam' ),
+			'description' => __( 'A quotation set between two passages of text.', 'pritam' ),
+			'content'     => '<!-- wp:separator --><hr class="wp-block-separator"/><!-- /wp:separator -->'
+				. '<!-- wp:quote --><blockquote class="wp-block-quote"><p></p></blockquote><!-- /wp:quote -->'
+				. '<!-- wp:separator --><hr class="wp-block-separator"/><!-- /wp:separator -->',
+		)
+	);
+}
+add_action( 'init', 'pritam_register_block_patterns' );
+
 require get_template_directory() . '/templatesell/ts-core-files.php';

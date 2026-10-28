@@ -66,11 +66,18 @@ function pritam_comments_number ($output, $number) {
 		  <div class="comment-content cm-info">
 			  <div class="author-wrap">
 				  <div class="cm-hed">
-					  <?php printf( __( '<h3 class="author-name">%s</h3>', 'pritam' ), get_comment_author_link() ); ?>
+					  <h3 class="author-name"><?php echo wp_kses_post( get_comment_author_link() ); ?></h3>
 					  <div class="cm-right">
 						  <span>
-							  <a class="date-comment" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"></a>
-							  <?php printf( __('%1$s at %2$s', 'pritam'), get_comment_date(),  get_comment_time() ); ?>
+							  <a class="date-comment" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"></a>
+							  <?php
+							  printf(
+								  /* translators: 1: comment date, 2: comment time. */
+								  esc_html__( '%1$s at %2$s', 'pritam' ),
+								  esc_html( get_comment_date() ),
+								  esc_html( get_comment_time() )
+							  );
+							  ?>
 						  </span>
 						  <div class="reply">
 							  <?php edit_comment_link( esc_html__( '(Edit)', 'pritam' ), '  ', '' );?>

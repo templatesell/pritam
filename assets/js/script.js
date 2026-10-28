@@ -45,12 +45,23 @@ jQuery(document).ready(function($){
     /**
      * Primary menu sub-toggle
      */
-    $('<a class="sub-toggle" href="javascript:void(0);"><i class="fa fa-angle-down ml-2"></i></a>').insertAfter('#primary-menu .menu-item-has-children>a, #primary-menu .page_item_has_children>a');
+    var pritamExpand   = ( window.pritam_menu && pritam_menu.expand ) ? pritam_menu.expand : 'Expand child menu',
+        pritamCollapse = ( window.pritam_menu && pritam_menu.collapse ) ? pritam_menu.collapse : 'Collapse child menu';
+
+    $('<button type="button" class="sub-toggle" aria-expanded="false">' +
+        '<i class="fa fa-angle-down ml-2" aria-hidden="true"></i>' +
+        '<span class="screen-reader-text">' + pritamExpand + '</span>' +
+        '</button>').insertAfter('#primary-menu .menu-item-has-children>a, #primary-menu .page_item_has_children>a');
 
     $('body').on( 'click', '#primary-menu .sub-toggle', function() {
-        $(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle();
-        $(this).parent('.page_item_has_children').children('ul.children').first().slideToggle();
-        $(this).children('.fa').first().toggleClass('fa-angle-right').toggleClass('fa-angle-down');
+        var $toggle = $(this),
+            open    = $toggle.attr('aria-expanded') !== 'true';
+
+        $toggle.parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle();
+        $toggle.parent('.page_item_has_children').children('ul.children').first().slideToggle();
+        $toggle.children('.fa').first().toggleClass('fa-angle-right').toggleClass('fa-angle-down');
+        $toggle.attr('aria-expanded', open ? 'true' : 'false');
+        $toggle.children('.screen-reader-text').text( open ? pritamCollapse : pritamExpand );
     });
 
     /*==============================================

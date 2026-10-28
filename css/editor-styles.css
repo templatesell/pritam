@@ -1,0 +1,168 @@
+/*
+ * Pritam editor styles.
+ *
+ * This file shipped empty, and the way it was loaded no longer reaches the
+ * content now that the post editor is an iframe - so writing a post looked
+ * nothing like reading one. The old loader also pulled Muli and Prata from
+ * Google on every editor load, neither of which the theme uses.
+ *
+ * These rules mirror the front end, and are loaded through add_editor_style().
+ */
+
+.editor-styles-wrapper {
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #6f6f6f;
+    background-color: #ffffff;
+}
+
+.editor-styles-wrapper p,
+.editor-styles-wrapper ol,
+.editor-styles-wrapper ul {
+    margin: 0 0 1rem;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6,
+.editor-post-title__block .editor-post-title__input,
+.editor-post-title__input {
+    font-family: 'Mulish', sans-serif;
+    color: #1a191e;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.editor-styles-wrapper h1,
+.editor-post-title__block .editor-post-title__input,
+.editor-post-title__input {
+    font-size: 36px;
+}
+
+.editor-styles-wrapper h2 {
+    font-size: 30px;
+}
+
+.editor-styles-wrapper h3 {
+    font-size: 26px;
+}
+
+.editor-styles-wrapper h4 {
+    font-size: 22px;
+}
+
+.editor-styles-wrapper h5 {
+    font-size: 18px;
+}
+
+.editor-styles-wrapper h6 {
+    font-size: 16px;
+}
+
+/*
+ * A link in post content carries the theme accent and an underline, so the
+ * editor shows it the way it will be read.
+ */
+.editor-styles-wrapper a {
+    color: #5b7683;
+    text-decoration: underline;
+}
+
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper .wp-block-quote {
+    border-left: 3px solid #5b7683;
+    padding: 10px 0 10px 25px;
+    margin: 0 0 1rem;
+    font-style: italic;
+}
+
+.editor-styles-wrapper cite,
+.editor-styles-wrapper .wp-block-quote__citation,
+.editor-styles-wrapper .wp-block-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    font-style: normal;
+    color: #6f7476;
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd,
+.editor-styles-wrapper tt,
+.editor-styles-wrapper pre {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    background-color: #f5f5f5;
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd,
+.editor-styles-wrapper tt {
+    padding: 2px 6px;
+    font-size: 13px;
+}
+
+.editor-styles-wrapper pre {
+    padding: 20px;
+    overflow: auto;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.editor-styles-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper td {
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    text-align: left;
+}
+
+.editor-styles-wrapper figcaption,
+.editor-styles-wrapper .wp-block-image figcaption {
+    font-size: 13px;
+    color: #6f7476;
+    text-align: center;
+}
+
+.editor-styles-wrapper hr,
+.editor-styles-wrapper .wp-block-separator {
+    border: 0;
+    border-top: 1px solid #e6e6e6;
+}
+
+/* ------------------------------------------------- the theme's block styles */
+
+.editor-styles-wrapper .is-style-pritam-lead {
+    font-size: 19px;
+    line-height: 30px;
+    color: #1a191e;
+}
+
+.editor-styles-wrapper .is-style-pritam-boxed {
+    padding: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #e6e6e6;
+}
+
+.editor-styles-wrapper .is-style-pritam-plain-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.editor-styles-wrapper .is-style-pritam-plain-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.editor-styles-wrapper .is-style-pritam-plain-list li:last-child {
+    border-bottom: 0;
+}

@@ -15,16 +15,26 @@ if (!function_exists('pritam_dynamic_css')) :
         global $pritam_theme_options;
 
         /* Color Options Options */
-        $pritam_primary_color              = esc_attr($pritam_theme_options['pritam_primary_color']);
+        /*
+         * esc_attr() will happily pass "red; }" into a stylesheet.
+         * sanitize_hex_color() returns null for anything that is not a hex
+         * colour, and the theme default stands in for it.
+         */
+        $pritam_defaults      = pritam_default_theme_options_values();
+        $pritam_primary_color = sanitize_hex_color( $pritam_theme_options['pritam_primary_color'] );
+
+        if ( null === $pritam_primary_color ) {
+            $pritam_primary_color = $pritam_defaults['pritam_primary_color'];
+        }
         $pritam_logo_width              = absint($pritam_theme_options['pritam_logo_width_option']);
-        
+
         $pritam_header_overlay  = esc_attr($pritam_theme_options['pritam_slider_overlay_color']);
         $pritam_header_transparent  = esc_attr($pritam_theme_options['pritam_slider_overlay_transparent']);
         $pritam_header_min_height              = absint($pritam_theme_options['pritam_header_image_height']);
 
         $custom_css = '';
 
-        //Primary  Background 
+        //Primary  Background
         if (!empty($pritam_primary_color)) {
             $custom_css .= "
             .social-links li a:before,
@@ -39,25 +49,25 @@ if (!function_exists('pritam_dynamic_css')) :
             .widget.widget_tag_cloud .tag-cloud-link:hover,
             .post-control ul li:hover,
             .comment-respond .form-submit input[type='submit'],
-            .blob{ 
-                background-color: ". $pritam_primary_color."; 
+            .blob{
+                background-color: ". $pritam_primary_color.";
             }";
 
         }
         //Primary Color
         if (!empty($pritam_primary_color)) {
             $custom_css .= "
-            #author:active, 
-            #email:active, 
-            #url:active, 
-            #comment:active, 
-            #author:focus, 
-            #email:focus, 
-            #url:focus, 
+            #author:active,
+            #email:active,
+            #url:active,
+            #comment:active,
+            #author:focus,
+            #email:focus,
+            #url:focus,
             #comment:focus,
-            #author:hover, 
-            #email:hover, 
-            #url:hover, 
+            #author:hover,
+            #email:hover,
+            #url:hover,
             #comment:hover{
                 border-color:".$pritam_primary_color.";
             }";
@@ -65,47 +75,51 @@ if (!function_exists('pritam_dynamic_css')) :
         //Primary Color
         if (!empty($pritam_primary_color)) {
             $custom_css .= "
-            a, 
-            nav ul li a:hover, 
+            a,
+            nav ul li a:hover,
             a.subscribe-btn,
             nav ul li.current-menu-item a,
             .subscribe-btn:hover,
             .blog-info .post-category,
             .children li a:hover,
-            .sub-menu li a:hover{ 
-                color : ". $pritam_primary_color."; 
+            .sub-menu li a:hover,
+            .reply a,
+            .comment-respond .sec-title h3 small a,
+            .social-icon-links ul li:hover a:before,
+            .standard-post blockquote:before{
+                color : ". $pritam_primary_color.";
             }";
         }
 
         //Logo Width
         if (!empty($pritam_logo_width)) {
             $custom_css .= "
-            .header-1 .head_one .logo{ 
-                max-width : ". $pritam_logo_width."px; 
+            .header-1 .head_one .logo{
+                max-width : ". $pritam_logo_width."px;
             }";
         }
 
         //Header Overlay
         if (!empty($pritam_header_overlay)) {
             $custom_css .= "
-            .header-image:before { 
-                background-color : ". $pritam_header_overlay."; 
+            .header-image:before {
+                background-color : ". $pritam_header_overlay.";
             }";
         }
 
         //Header Tranparent
         if (!empty($pritam_header_transparent)) {
             $custom_css .= "
-            .header-image:before { 
-                opacity : ". $pritam_header_transparent."; 
+            .header-image:before {
+                opacity : ". $pritam_header_transparent.";
             }";
         }
 
         //Header Min Height
         if (!empty($pritam_header_min_height)) {
             $custom_css .= "
-            .header-image{ 
-                min-height : ". $pritam_header_min_height."px; 
+            .header-image{
+                min-height : ". $pritam_header_min_height."px;
             }";
         }
 
